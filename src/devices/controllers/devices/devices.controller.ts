@@ -17,7 +17,9 @@ export class DevicesController {
         try {
             const devices: Device[] = await this.devicesService.getDevices();
 
-            res.status(200).json(devices)
+            res.status(200).json(
+                devices
+            )
         } catch (error) {
 
         }
