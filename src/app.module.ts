@@ -7,22 +7,22 @@ import { Module } from '@nestjs/common';
 
 const routes: Routes = [
   {
-    path: "devices",
-    module: DevicesModule
-  }
-]
+    path: 'devices',
+    module: DevicesModule,
+  },
+];
 
 @Module({
   imports: [
     DatabaseModule,
     DevicesModule,
     ConfigModule.forRoot({
-      envFilePath: "src/.env",
-      isGlobal: true
+      envFilePath: 'src/.env',
+      isGlobal: true,
     }),
-    RouterModule.register(routes)
+    RouterModule.register(routes),
   ],
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}
