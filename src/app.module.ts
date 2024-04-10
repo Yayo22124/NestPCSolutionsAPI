@@ -7,7 +7,7 @@ import { Module } from '@nestjs/common';
 
 const routes: Routes = [
   {
-    path: 'devices',
+    path: '/',
     module: DevicesModule,
   },
 ];
@@ -17,7 +17,7 @@ const routes: Routes = [
     DatabaseModule,
     DevicesModule,
     ConfigModule.forRoot({
-      envFilePath: 'src/.env',
+      envFilePath: '.env',
       isGlobal: true,
     }),
     RouterModule.register(routes),

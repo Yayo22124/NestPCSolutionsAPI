@@ -1,22 +1,13 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
 
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { NestFactory } from '@nestjs/core';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(
+  const app = await NestFactory.create<NestExpressApplication>(
     AppModule,
-    new FastifyAdapter({
-      logger: {
-        enabled: true,
-        timestamp: false,
-        level: 'debug',
-      }
-    })
+    
   );
 
   app.enableCors({

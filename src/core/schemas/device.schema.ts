@@ -2,7 +2,10 @@ import * as mongoose from 'mongoose';
 
 export const DeviceSchema = new mongoose.Schema(
   {
-    uuid: String,
+    uuid: {
+      default: crypto.randomUUID(),
+      type: String
+    },
     name: String,
     brand: String,
     type: String,
