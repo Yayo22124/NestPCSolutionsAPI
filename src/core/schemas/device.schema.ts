@@ -1,9 +1,13 @@
 import * as mongoose from 'mongoose';
 
+const generateUUID = () => {
+  return crypto.randomUUID();
+};
+
 export const DeviceSchema = new mongoose.Schema(
   {
     uuid: {
-      default: crypto.randomUUID(),
+      default: generateUUID,
       type: String
     },
     name: String,
